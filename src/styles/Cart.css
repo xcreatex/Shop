@@ -1,0 +1,245 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .cart-container h1 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  .empty-cart {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .empty-cart p {
+    font-size: 18px;
+    color: var(--dark-gray);
+  }
+  
+  .continue-shopping-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-block;
+  }
+  
+  .continue-shopping-button:hover {
+    background-color: #2a75e8;
+  }
+  
+  .cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .cart-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 20px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 15px;
+    align-items: center;
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cart-item-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .cart-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Fix cart item title display */
+  .cart-item-title {
+    font-weight: 600;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  
+  .cart-item-title:hover {
+    color: var(--primary-color);
+  }
+  
+  .cart-item-price {
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .cart-quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .quantity-button {
+    width: 30px;
+    height: 30px;
+    background-color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 50%;
+    transition: var(--transition);
+  }
+  
+  .quantity-button:hover {
+    background-color: var(--medium-gray);
+  }
+  
+  .quantity-display {
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+  }
+  
+  .remove-button {
+    color: var(--error-color);
+    font-size: 14px;
+    transition: var(--transition);
+  }
+  
+  .remove-button:hover {
+    text-decoration: underline;
+  }
+  
+  .cart-item-subtotal {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  .cart-summary {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  .cart-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .checkout-button {
+    background-color: var(--success-color);
+    color: white;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .checkout-button:hover {
+    background-color: #2d9900;
+  }
+  
+  .checkout-button:disabled {
+    background-color: var(--medium-gray);
+    cursor: not-allowed;
+  }
+  
+  .order-success-message {
+    background-color: var(--success-color);
+    color: white;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: 18px;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Improve responsive layout for mobile */
+  @media (max-width: 600px) {
+    .cart-item {
+      grid-template-columns: 60px 1fr;
+      grid-template-rows: auto auto;
+    }
+  
+    .cart-item-subtotal {
+      grid-column: 1 / -1;
+      text-align: right;
+      padding-top: 10px;
+      border-top: 1px solid var(--light-gray);
+      margin-top: 10px;
+    }
+  
+    .cart-item-image {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .cart-actions {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .continue-shopping-button,
+    .checkout-button {
+      min-width: 200px;
+    }
+  }
+  
